@@ -1,0 +1,339 @@
+1. Fill in the blank [   ] by selecting an answer from the options below.
+
+One disadvantage of call (pass)-by-[       ] is that if a large data item (for example, 1080 by 1920 double array) is being passed, copying the data can take a considerable amount of execution time and memory space. [5점]
+
+value
+
+reference
+
+pointer
+
+none of above
+===============================================================
+
+2. Select an answer from the following options below.
+
+Fill in the blank [   ] by selecting an answer from the options below.
+
+The scope, or the variable lifespan of a [       ] variable is within the function that variable is defined. [5점]
+
+답변 선택 그룹
+
+local
+
+global
+
+protected
+
+private
+===================================================================
+3. 다음 (1)과 (2) 코드에서 각 line2를 []를 쓰지 말고 써 보시오. 단, 원래의 코드와 같은 기능을 해야함.
+
+ 
+
+(1)  -> [5점]
+
+int a[10];  //line 1
+
+a[4] = 5;   //line 2
+
+ 
+
+(2)  -> [5점]
+
+int a[5][10];  //line 1
+
+a[3][4] = 5;   //line 2
+
+
+(1)
+
+*(a + 4) = 5;
+
+
+
+
+(2)
+*(*(a + 3) + 4) = 5;
+===================================================================
+4. 다음 (1)과 (2) 코드에서 각 line2를 []를 쓰지 말고 써 보시오. 단, 원래의 코드와 같은 기능을 해야함.
+
+ 
+
+(1)  -> [5점]
+
+int a[10];  //line 1
+
+a[4] = 5;   //line 2
+
+ 
+
+(2)  -> [5점]
+
+int a[5][10];  //line 1
+
+a[3][4] = 5;   //line 2
+
+
+(1)
+*(a + 4) = 5;
+
+
+
+
+(2)
+*(*(a + 3) + 4) = 5;
+
+====================================================================
+5. 아래 코드를 보고 문제에 답하시오.
+
+ 
+
+#include <iostream>
+
+using namespace std;
+
+ 
+
+int f(int a, int b){
+
+    return a+b;
+
+}
+
+ 
+
+int g (/*fill in here*/, int x, int y){
+
+    return 2 * (*f)(x,y);
+
+}
+
+ 
+
+int main(){
+
+    cout << g(f, 2, 3) <<endl;
+
+}
+
+ 
+
+(1) 함수 g의 /*fill in here*/에 들어갈 내용은? [6점] 
+
+(2) 화면에 출력되는 값은 무언인가? [4점]
+(1) int (*f)(int, int)
+
+(2) 10
+
+
+=====================================================================
+5. 다음 프로그램에서 function create_integer_matrix()는 parameter로 정수 n을 입력받아 (1) nxn 2차원 array를 만들고, (2) [i][j]번째 원소에 i+j값을 넣고, (3) 그 array의 pointer를 return하는 함수이다. 그러므로 아래의 main에서는 다음과 같은 값이 화면에 프린트 된다.
+
+0 1 2
+
+1 2 3
+
+2 3 4
+
+free_integer_matrix()는 생성된 2차원 array의 메모리를 해제하는 함수이다.
+
+create_integer_matrix() 및 destroy_integer_matrix()를 작성하라. [30점] ([시작코드]를 변경하지 말 것) Function의 declaration, definition 모두 작성할 것. 작성한 프로그램은 시작코드를 포함한 하나의 <학번_문제>.cpp 파일 형태로 업로드 하시오. 파일명에 한글이나 특수문자는 사용하지 마시오.
+
+ex) 2021000111_q5.cpp 파일 업로드
+
+Memory leak이나 run-time error가 발생할 시 감점.
+
+ 
+
+[시작코드]
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int i,j, **M;
+    M = create_integer_matrix(3);
+    for(i=0; i<3; i++){
+        for(j=0; j<3; j++){
+            cout << M[i][j] << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+
+    destroy_integer_matrix(M, 3);
+    return 0;
+}
+=================================================================================
+6.아래의 요구사항을 만족하는 프로그램을 만드시오. ([시작코드]를 변경하지 말 것) 작성한 프로그램은 시작코드를 포함한 하나의 <학번_문제>.cpp 파일 형태로 업로드 하시오. 파일명에 한글이나 특수문자는 사용하지 마시오.
+
+ex) 2021000111_q6.cpp 파일 업로드
+
+Memory leak이나 run-time error가 발생할 시 감점.
+
+ 
+
+[요구사항]
+
+- get_command(): 아래의 메뉴를 화면에 출력하고 키보드로부터 command를 입력 받음. [3점]
+
+- get_size(): "Enter the size in (size x size): "를 화면에 출력하고 키보드로부터 size를 입력받음 [3점]
+
+- gen_matrix(): 정방형(size x size) 행렬을 생성하고 rand()를 통해 각 element에 [0, 100]범위의 값을 저장 [10점]
+
+- sort_matrix_row(): 행렬의 각 행을 오름차순으로 정렬 후 “Completed”를 화면에 출력 [6점]
+
+    1) 이때, 각 행에 대한 정렬은 sort_array()를 사용(각 행을 array로 입력)하되 보너스 문제인 sort_array() 함수를 구현하지 않고 이미 구현되어있음을 가정해도 됨.
+
+    2) sort_array() 구현시, bubble sort 방법으로 정렬, 각 element의 값 교환을 위해 swap()사용 [보너스 20점. 시간이 없을 경우 본 함수는 이미 구현되어 있다고 가정하고 다른 문제를 풀어도 되며, 본 함수에 대한 코드는 제출하지 않아도 됨.]
+
+    3) Bubble sort: 0번째 index부터 마지막 index까지 이웃 원소간 비교를 통해 작은값은 왼쪽, 큰값은 오른쪽 위치로 교환시키는 방법
+
+       예제:
+
+               Picture1.png 
+
+       Psuedo-code:
+
+                  Picture2.png   
+
+- print_matrix(): 화면에 렬의 각 원소를 출력( cout<< setw(4) << matrix[row][col]을 이용할 것) [6점]
+
+- save_matrix(): “matrix.txt”에 아래와 같이 저장 (첫 줄: size, 다음 줄: 원소들)후 화면에 “Saved”를 출력 [6점]
+
+          Picture3.png
+
+- free_matrix(): 행렬 할당 해제 [6점]
+
+ 
+
+[시작코드]
+
+#include <iostream>
+
+#include <string>
+
+#include <fstream>
+
+#include <iomanip>
+
+using namespace std;
+
+ 
+
+void get_command(/*작성할 것*/);
+
+void get_size(/*작성할 것*/);
+
+int** gen_matrix(/*작성할 것*/);
+
+void swap(int* a, int* b);// 주어짐
+
+void sort_array(int* ary, int size);
+
+void sort_matrix_row(/*작성할 것*/);
+
+void print_matrix(/*작성할 것*/);
+
+void save_matrix(/*작성할 것*/);
+
+void free_matrix(/*작성할 것*/);
+
+ 
+
+int main() {
+
+       string command;
+
+       int** matrix = NULL;
+
+       int size = 0;
+
+       while (1) {
+
+              get_command(command);
+
+              if(command == "1"){
+
+                      get_size(size);
+
+                      matrix = gen_matrix(size);
+
+              }
+
+              else if (command == "2") {
+
+                      print_matrix(matrix, size);
+
+              }
+
+              else if (command == "3") {
+
+                      sort_matrix_row(matrix, size);
+
+              }
+
+              else if (command == "4") {
+
+                      save_matrix(matrix, size);
+
+              }
+
+              else if (command == "0") {
+
+                     free_matrix(matrix, size);
+
+                      cout << "Exit the program.." << endl;
+
+                      exit(104);
+
+              }
+
+              else {
+
+                      cout << "Wrong command" << endl << endl;
+
+              }
+
+       }
+
+ 
+
+       return 0;
+
+}
+
+ 
+
+void swap(int* a, int* b) {
+
+    int temp = *a;
+
+    *a = *b;
+
+    *b = temp;
+
+}
+
+ 
+
+void sort_array(int* ary, int size){
+
+    // 보너스 문제를 안 풀시에는 작성하지 않아도 됨
+
+}
+
+ 
+
+[실행 화면]
+
+Screen Shot 2021-04-21 at 18.50.07.png
+
+
+
+
+
+
