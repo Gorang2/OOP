@@ -3,7 +3,6 @@
 #include "FixedText.h"
 #include <iostream>
 
-using namespace std;
 
 int main() {
 Text t1("Plain");

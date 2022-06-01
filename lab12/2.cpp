@@ -55,3 +55,4 @@ int main() {
 //t2 = t1; // Derived <- Base 불가능
 	return 0;
 }
+

@@ -1,3 +1,6 @@
+#ifndef BOOK_H
+#define BOOK_H
+
 #include <string>
 #include <iostream>
 
@@ -62,4 +65,4 @@ void Book::setTitle(std::string newTitle)
 void Book::setYear(int newYear)
 { year = newYear; }
 
-
+#endif

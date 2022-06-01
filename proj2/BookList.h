@@ -1,5 +1,6 @@
+#ifndef BOOK_H
 #include "Book.h"
-
+#endif
 class BookList {
 	private:
 		void slideUp(int location);
@@ -22,7 +23,7 @@ void BookList::addBook(Book b)
 {
 	if (count == 10)
 	{
-		std::cout << "List is already fulll." << std::endl;
+		std::cout << "List is already full." << std::endl;
 		return ;
 	}
 	books[count] = b;

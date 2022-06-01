@@ -1,5 +1,5 @@
-#pragma once
-
+#ifndef TEXT_H
+#define TEXT_H
 #include <string>
 using namespace std;
 // 함수 오버로딩: int sum(int x, int y),
@@ -18,3 +18,4 @@ class Text {
 		virtual void append(string _extra);
 };
 
+#endif

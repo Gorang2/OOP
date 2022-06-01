@@ -1,6 +1,4 @@
-#include <string>
 #include "Text.h"
-using namespace std;
 
 class FancyText : public Text {
 	private:
