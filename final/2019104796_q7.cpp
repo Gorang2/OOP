@@ -22,17 +22,15 @@ public:
 	       for (int i=0; i<vItem.size(); i++)
 	       {
 		       bool flag = true;
-		       int len = 0;
 		       for (int j=0; j<vLength[i]; j++)
 		       {
-			       len++;
 			       if (_pArray[j] != vItem[i][j])
 			       {
 				      flag = false;
 				      break;
 			       }
 		       }
-		       if (flag && len == vLength[i])
+		       if (flag && _length == vLength[i])
 			       return (i);
 	       }
 	       return -1;
@@ -46,7 +44,7 @@ public:
 	       {
 		       cout << idx << "-th vector:\t";
 		       for (int i=0; i<vLength[idx]; i++)
-			       cout << vItem[idx][i] << "\t";
+			       cout << setw(7) << vItem[idx][i] << "\t";
 		       cout << endl;
 	       }
 

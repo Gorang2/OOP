@@ -48,7 +48,7 @@ class Queue
 		{
 			if (size == 0)
 			{
-				cout << "Error : No item existes in the list" << endl;
+				cout << "Error : No item exist in the list" << endl;
 				return ((T)-1);
 			}
 			else

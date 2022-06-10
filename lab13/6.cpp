@@ -36,7 +36,7 @@ class CList
 		}
 		void Add(T data)
 		{
-			if (m_Length == 5)
+			if (IsFull())
 			{
 				cout << "\n\tList is full." << endl;
 				return ;
@@ -55,7 +55,7 @@ class CList
 		}
 		void Delete(T data)
 		{
-			if (m_Length == 0)
+			if (IsEmpty())
 			{
 				cout << "\n\tList is empty." << endl;
 				return ;

@@ -9,6 +9,8 @@ int main()
 		string s;
 		cout << "문자열 하나를 입력해주세요 : ";
 		cin >> s;
+		if (s == "q" || s == "Q")
+			break;
 		auto f = [s](void){
 			int len = s.length() - 1;
 			bool flag = true;
@@ -31,4 +33,5 @@ int main()
 		};
 		f();
 	}
+	cout << "프로그램을 종료합니다." << endl;
 }

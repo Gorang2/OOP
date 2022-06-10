@@ -27,7 +27,7 @@ T Point<T>::getY() { return y; }
 template<class T>
 void Point<T>::print()
 {
-	cout << x << " " << y << endl;
+	cout << x << ", " << y << endl;
 }
 // getX() 구현
 // getY() 구현
